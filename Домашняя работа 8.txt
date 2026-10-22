@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_DEPRECATE
+#define _USE_MATH_DEFINES 
+#include <locale.h>
+#include <stdio.h>
+#include <math.h>
+int homework(int n);
+
+int main()
+{
+    setlocale(LC_ALL, "RUS");
+
+    int n, result;
+    puts("Введите целое число n (n >= 0)");
+    scanf("%d", &n);
+    result = homework(n);
+    double sum = 0.;
+    for (int i = 0; i <= n; i++) 
+    {
+        double num = pow(-1, i) * (1. / pow(2, i));
+        sum += num;
+    }
+    printf("Значение выражения для n = %d равно: %.6f\n", n, sum);
+    return 0;
+}    
+
+int homework(int n)
+{
+    return n;
+}
